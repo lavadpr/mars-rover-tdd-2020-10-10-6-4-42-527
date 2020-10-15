@@ -35,6 +35,8 @@ public class MarsRover {
     private void turnRight() {
         if(direction.equals("N"))
             direction = "E";
+        if(direction.equals("S"))
+            direction = "W";
     }
 
     private void turnLeft() {
