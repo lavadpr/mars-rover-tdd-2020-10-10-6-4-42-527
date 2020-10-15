@@ -45,5 +45,7 @@ public class MarsRover {
     private void move() {
         if(direction.equals("N"))
             y++;
+        if(direction.equals("S"))
+            y--;
     }
 }
