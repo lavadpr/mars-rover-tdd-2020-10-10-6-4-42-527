@@ -36,10 +36,10 @@ public class MarsRover {
     }
 
     public void getRoverPosition(String movement) throws CommandNotDefinedException {
-//        if(isValidMovement(movement))
+        if(isValidMovement(movement))
             Arrays.asList(movement.split(""))
                 .forEach(this::getRoverPositionPerCommand);
-//        else throw new CommandNotDefinedException();
+        else throw new CommandNotDefinedException();
     }
 
     private void getRoverPositionPerCommand(String command) {
