@@ -1,16 +1,16 @@
 package com.afs.tdd;
 
 public class MarsRover {
-    public static final String MOVE = "M";
-    public static final String LEFT = "L";
-    public static final String RIGHT = "R";
-    public static final String NORTH = "N";
-    public static final String EAST = "E";
-    public static final String SOUTH = "S";
-    public static final String WEST = "W";
-    int x;
-    int y;
-    String direction;
+    private static final String MOVE = "M";
+    private static final String LEFT = "L";
+    private static final String RIGHT = "R";
+    private static final String NORTH = "N";
+    private static final String EAST = "E";
+    private static final String SOUTH = "S";
+    private static final String WEST = "W";
+    private int x;
+    private int y;
+    private String direction;
 
     public MarsRover(int x, int y, String direction) {
         this.x = x;
@@ -31,44 +31,67 @@ public class MarsRover {
     }
 
     public void getRoverPosition(String movement) {
-        if(movement.equals(MOVE))
-            move();
-        else if(movement.equals(LEFT))
-            turnLeft();
-        else if(movement.equals(RIGHT))
-            turnRight();
+        switch (movement) {
+            case MOVE:
+                move();
+                break;
+            case LEFT:
+                turnLeft();
+                break;
+            case RIGHT:
+                turnRight();
+                break;
+        }
     }
 
     private void turnRight() {
-        if(direction.equals(SOUTH))
-            direction = WEST;
-        else if(direction.equals(EAST))
-            direction = SOUTH;
-        else if(direction.equals(NORTH))
-            direction = EAST;
-        else if(direction.equals(WEST))
-            direction = NORTH;
+        switch (direction) {
+            case SOUTH:
+                direction = WEST;
+                break;
+            case EAST:
+                direction = SOUTH;
+                break;
+            case NORTH:
+                direction = EAST;
+                break;
+            case WEST:
+                direction = NORTH;
+                break;
+        }
     }
 
     private void turnLeft() {
-        if(direction.equals(NORTH))
-            direction = WEST;
-        else if(direction.equals(EAST))
-            direction = NORTH;
-        else if(direction.equals(SOUTH))
-            direction = EAST;
-        else if(direction.equals(WEST))
-            direction = SOUTH;
+        switch (direction) {
+            case NORTH:
+                direction = WEST;
+                break;
+            case EAST:
+                direction = NORTH;
+                break;
+            case SOUTH:
+                direction = EAST;
+                break;
+            case WEST:
+                direction = SOUTH;
+                break;
+        }
     }
 
     private void move() {
-        if(direction.equals(NORTH))
-            y++;
-        else if(direction.equals(SOUTH))
-            y--;
-        else if(direction.equals(EAST))
-            x++;
-        else if(direction.equals(WEST))
-            x--;
+        switch (direction) {
+            case NORTH:
+                y++;
+                break;
+            case SOUTH:
+                y--;
+                break;
+            case EAST:
+                x++;
+                break;
+            case WEST:
+                x--;
+                break;
+        }
     }
 }
