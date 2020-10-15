@@ -26,6 +26,13 @@ public class MarsRover {
     public void getRoverPosition(String movement) {
         if(movement.equals("M"))
             move();
+        if(movement.equals("L"))
+            turnLeft();
+    }
+
+    private void turnLeft() {
+        if(direction.equals("N"))
+            direction = "W";
     }
 
     private void move() {
