@@ -113,4 +113,16 @@ class MarsRoverTest {
         assertEquals(0, marsRover.getY());
         assertEquals("S", marsRover.getDirection());
     }
+    @Test
+    void should_x_n1_y_0_direction_W_when_getRoverPosition_given_x_0_y_0_direction_W_movement_M() {
+        //given
+        String movement = "M";
+        MarsRover marsRover = new MarsRover(0,0,"W");
+        //when
+        marsRover.getRoverPosition(movement);
+        //then
+        assertEquals(-1, marsRover.getX());
+        assertEquals(0, marsRover.getY());
+        assertEquals("W", marsRover.getDirection());
+    }
 }
