@@ -1,6 +1,13 @@
 package com.afs.tdd;
 
 public class MarsRover {
+    public static final String MOVE = "M";
+    public static final String LEFT = "L";
+    public static final String RIGHT = "R";
+    public static final String NORTH = "N";
+    public static final String EAST = "E";
+    public static final String SOUTH = "S";
+    public static final String WEST = "W";
     int x;
     int y;
     String direction;
@@ -24,32 +31,32 @@ public class MarsRover {
     }
 
     public void getRoverPosition(String movement) {
-        if(movement.equals("M"))
+        if(movement.equals(MOVE))
             move();
-        if(movement.equals("L"))
+        if(movement.equals(LEFT))
             turnLeft();
-        if(movement.equals("R"))
+        if(movement.equals(RIGHT))
             turnRight();
     }
 
     private void turnRight() {
-        if(direction.equals("N"))
-            direction = "E";
-        if(direction.equals("S"))
-            direction = "W";
+        if(direction.equals(NORTH))
+            direction = EAST;
+        if(direction.equals(SOUTH))
+            direction = WEST;
     }
 
     private void turnLeft() {
-        if(direction.equals("N"))
-            direction = "W";
-        if(direction.equals("S"))
-            direction = "E";
+        if(direction.equals(NORTH))
+            direction = WEST;
+        if(direction.equals(SOUTH))
+            direction = EAST;
     }
 
     private void move() {
-        if(direction.equals("N"))
+        if(direction.equals(NORTH))
             y++;
-        if(direction.equals("S"))
+        if(direction.equals(SOUTH))
             y--;
     }
 }
