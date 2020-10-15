@@ -58,5 +58,7 @@ public class MarsRover {
             y++;
         if(direction.equals(SOUTH))
             y--;
+        if(direction.equals(EAST))
+            x++;
     }
 }
