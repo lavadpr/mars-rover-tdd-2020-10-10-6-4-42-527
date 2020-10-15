@@ -1,5 +1,9 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 public class MarsRover {
     private static final String MOVE = "M";
     private static final String LEFT = "L";
@@ -8,6 +12,7 @@ public class MarsRover {
     private static final String EAST = "E";
     private static final String SOUTH = "S";
     private static final String WEST = "W";
+    private static final List<String> VALID_MOVEMENT = Arrays.asList(MOVE, LEFT, RIGHT);
     private int x;
     private int y;
     private String direction;
@@ -30,8 +35,15 @@ public class MarsRover {
         return direction;
     }
 
-    public void getRoverPosition(String movement) {
-        switch (movement) {
+    public void getRoverPosition(String movement) throws CommandNotDefinedException {
+//        if(isValidMovement(movement))
+            Arrays.asList(movement.split(""))
+                .forEach(this::getRoverPositionPerCommand);
+//        else throw new CommandNotDefinedException();
+    }
+
+    private void getRoverPositionPerCommand(String command) {
+        switch (command) {
             case MOVE:
                 move();
                 break;
@@ -42,6 +54,10 @@ public class MarsRover {
                 turnRight();
                 break;
         }
+    }
+
+    private boolean isValidMovement(String movement) {
+        return VALID_MOVEMENT.containsAll(Arrays.asList(movement.split("")));
     }
 
     private void turnRight() {
@@ -92,6 +108,12 @@ public class MarsRover {
             case WEST:
                 x--;
                 break;
+        }
+    }
+
+    class CommandNotDefinedException extends Exception {
+        public CommandNotDefinedException() {
+            super("Command Not Defined");
         }
     }
 }
