@@ -33,34 +33,36 @@ public class MarsRover {
     public void getRoverPosition(String movement) {
         if(movement.equals(MOVE))
             move();
-        if(movement.equals(LEFT))
+        else if(movement.equals(LEFT))
             turnLeft();
-        if(movement.equals(RIGHT))
+        else if(movement.equals(RIGHT))
             turnRight();
     }
 
     private void turnRight() {
-        if(direction.equals(NORTH))
-            direction = EAST;
         if(direction.equals(SOUTH))
             direction = WEST;
+        else if(direction.equals(EAST))
+            direction = SOUTH;
+        else if(direction.equals(NORTH))
+            direction = EAST;
     }
 
     private void turnLeft() {
         if(direction.equals(NORTH))
             direction = WEST;
-        if(direction.equals(EAST))
+        else if(direction.equals(EAST))
             direction = NORTH;
-        if(direction.equals(SOUTH))
+        else if(direction.equals(SOUTH))
             direction = EAST;
     }
 
     private void move() {
         if(direction.equals(NORTH))
             y++;
-        if(direction.equals(SOUTH))
+        else if(direction.equals(SOUTH))
             y--;
-        if(direction.equals(EAST))
+        else if(direction.equals(EAST))
             x++;
     }
 }
