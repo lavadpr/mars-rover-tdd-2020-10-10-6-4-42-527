@@ -55,6 +55,8 @@ public class MarsRover {
             direction = NORTH;
         else if(direction.equals(SOUTH))
             direction = EAST;
+        else if(direction.equals(WEST))
+            direction = SOUTH;
     }
 
     private void move() {
