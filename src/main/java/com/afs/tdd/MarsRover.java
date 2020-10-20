@@ -16,10 +16,6 @@ public class MarsRover {
         this.roverStatus = new RoverStatus(x, y, direction);
     }
 
-    public RoverStatus getRoverStatus() {
-        return roverStatus;
-    }
-
     public int getX() {
         return roverStatus.getX();
     }

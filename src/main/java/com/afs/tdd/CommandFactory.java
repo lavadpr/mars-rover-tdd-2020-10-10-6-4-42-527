@@ -1,7 +1,7 @@
 package com.afs.tdd;
 
-public class CommandFactory {
-    public Command build(String command) {
+class CommandFactory {
+    Command build(String command) {
         if(command.equalsIgnoreCase("M")){
             return new MoveCommand();
         }

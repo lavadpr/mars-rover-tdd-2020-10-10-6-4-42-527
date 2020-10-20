@@ -1,25 +1,25 @@
 package com.afs.tdd;
 
-public class RoverStatus {
+class RoverStatus {
     private int x;
     private int y;
     private String direction;
 
-    public RoverStatus(int x, int y, String direction) {
+    RoverStatus(int x, int y, String direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
     }
 
-    public int getX() {
+    int getX() {
         return x;
     }
 
-    public int getY() {
+    int getY() {
         return y;
     }
 
-    public String getDirection() {
+    String getDirection() {
         return direction;
     }
 }
